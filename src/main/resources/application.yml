@@ -21,7 +21,16 @@ spring:
     locations: classpath:db/migration
     schemas: dbcdb
     user: postgres
-    password: wiris.123 
+    password: wiris.123
+  management:
+    endpoints:
+      web:
+      exposure:
+        include: '*'
+  logging:
+    file:
+      name: ./logs/log-file.log
+      
 server:
   servlet: 
     context-path: /digital-business-card/api

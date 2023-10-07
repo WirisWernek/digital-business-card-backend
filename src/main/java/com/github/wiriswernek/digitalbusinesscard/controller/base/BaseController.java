@@ -20,7 +20,9 @@ public interface BaseController {
 
 	public ResponseEntity updateAllObjects( List<BaseDTO> list );
 
-	public ResponseEntity deleteById();
+	public ResponseEntity delete(Long id);
+
+	public ResponseEntity deleteAll(List<Long> ids);
 
 	public ResponseEntity active( Long id );
 
