@@ -6,7 +6,7 @@ import org.springframework.http.ResponseEntity;
 
 import com.github.wiriswernek.digitalbusinesscard.model.dto.base.BaseDTO;
 
-public interface BaseController {
+public interface BaseInterfaceController {
 
 	public ResponseEntity getAll();
 

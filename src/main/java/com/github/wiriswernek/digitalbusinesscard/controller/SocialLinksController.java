@@ -13,93 +13,162 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.wiriswernek.digitalbusinesscard.controller.base.BaseController;
+import com.github.wiriswernek.digitalbusinesscard.controller.base.BaseClassController;
+import com.github.wiriswernek.digitalbusinesscard.controller.base.BaseInterfaceController;
+import com.github.wiriswernek.digitalbusinesscard.domain.facade.interfaces.SocialLinksFacade;
+import com.github.wiriswernek.digitalbusinesscard.exceptions.BusinessException;
 import com.github.wiriswernek.digitalbusinesscard.model.dto.base.BaseDTO;
+
+import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("social-links")
-public class SocialLinksController implements BaseController {
+@RequiredArgsConstructor
+public class SocialLinksController extends BaseClassController implements BaseInterfaceController {
+
+	private SocialLinksFacade facade;
+
 	@Override
 	@GetMapping("/")
 	public ResponseEntity getAll() {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getAll'");
+		try {
+			return ResponseEntity.ok().body(facade.getAll());
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@GetMapping("/{id}")
 	public ResponseEntity getById(@PathVariable Long id) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'getById'");
+		try {
+			return ResponseEntity.ok().body(facade.getById(id));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@PostMapping("/")
 	public ResponseEntity insert(@RequestBody BaseDTO dto) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'insert'");
+		try {
+			return ResponseEntity.ok().body(facade.insert(dto));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@PostMapping("/all")
 	public ResponseEntity insertAllObjects(@RequestBody List<BaseDTO> list) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'insertAllObjects'");
+		try {
+			return ResponseEntity.ok().body(facade.insertAllObjects(list));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@PutMapping("/{id}")
 	public ResponseEntity update(@RequestBody BaseDTO dto) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'update'");
+		try {
+			return ResponseEntity.ok().body(facade.update(dto));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@PutMapping("/all")
 	public ResponseEntity updateAllObjects(@RequestBody List<BaseDTO> list) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'updateAllObjects'");
+		try {
+			return ResponseEntity.ok().body(facade.updateAllObjects(list));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@DeleteMapping("/{id}")
 	public ResponseEntity delete(@PathVariable Long id) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+		try {
+			return ResponseEntity.ok().body(facade.delete(id));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@DeleteMapping("/all")
 	public ResponseEntity deleteAll(@RequestBody List<Long> ids) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'deleteById'");
+		try {
+			return ResponseEntity.ok().body(facade.deleteAll(ids));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@PatchMapping("/active/{id}")
 	public ResponseEntity active(@PathVariable Long id) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'active'");
+		try {
+			return ResponseEntity.ok().body(facade.active(id));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@PatchMapping("/active/all")
 	public ResponseEntity activeAllByIds(@RequestBody List<Long> ids) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'activeAllByIds'");
+		try {
+			return ResponseEntity.ok().body(facade.activeAllByIds(ids));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@PatchMapping("/desactive/all")
 	public ResponseEntity desactive(@PathVariable Long id) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'desactive'");
+		try {
+			return ResponseEntity.ok().body(facade.desactive(id));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 
 	@Override
 	@PatchMapping("/desactive/all")
 	public ResponseEntity desactiveAllByIds(@RequestBody List<Long> ids) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Unimplemented method 'desactiveAllByIds'");
+		try {
+			return ResponseEntity.ok().body(facade.desactiveAllByIds(ids));
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
 	}
 }
