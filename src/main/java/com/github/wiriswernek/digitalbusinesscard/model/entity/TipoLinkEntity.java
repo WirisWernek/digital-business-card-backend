@@ -1,13 +1,15 @@
 package com.github.wiriswernek.digitalbusinesscard.model.entity;
 
+import java.time.LocalDateTime;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-
-import com.github.wiriswernek.digitalbusinesscard.model.entity.base.BaseEntity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,7 +20,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Table(name = "TIPO_LINKS")
-public class TipoLinkEntity extends BaseEntity {
+public class TipoLinkEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
@@ -26,4 +28,19 @@ public class TipoLinkEntity extends BaseEntity {
 
 	@Column(name = "DESCRICAO")
 	private String descricao;
+
+	@Column(name = "ID_ORGANIZACAO")
+	@NotNull(message = "IdOrganização não pode ser nulo!")
+	@NotBlank(message = "IdOrganização não pode ser vazio!")
+	protected Long idOrganizacao;
+
+	@Column(name = "DATA_CRIACAO")
+	@NotNull(message = "Data de Criação não pode ser nula!")
+	protected LocalDateTime dataCriacao;
+
+	@Column(name = "DATA_EXCLUSAO")
+	protected LocalDateTime dataExclusao;
+
+	@Column(name = "DATA_MODIFICACAO")
+	protected LocalDateTime dataModificacao;
 }

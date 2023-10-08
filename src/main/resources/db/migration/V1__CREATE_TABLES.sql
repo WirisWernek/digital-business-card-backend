@@ -5,6 +5,10 @@ CREATE TABLE dbcdb.links (
 	texto varchar NOT NULL,
 	id_usuario int NOT NULL,
 	id_tipo int NOT NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
 	CONSTRAINT links_pk PRIMARY KEY (id)
 );
 
@@ -16,6 +20,10 @@ CREATE TABLE dbcdb.action_buttons (
 	descricao varchar NULL,
 	style_nameid varchar NOT NULL,
 	id_usuario int NOT NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
 	CONSTRAINT action_button_pk PRIMARY KEY (id)
 );
 
@@ -27,6 +35,10 @@ CREATE TABLE dbcdb.contact_links (
 	telefone varchar NOT NULL,
 	download_link varchar NOT NULL,
 	id_usuario int NOT NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
 	CONSTRAINT contact_links_pk PRIMARY KEY (id)
 );
 
@@ -41,6 +53,10 @@ CREATE TABLE dbcdb.optional_buttons (
 	chave_pix varchar NULL,
 	email_rapido_endereco varchar NULL,
 	id_usuario int NOT NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
 	CONSTRAINT optional_buttons_pk PRIMARY KEY (id)
 );
 
@@ -48,6 +64,10 @@ CREATE TABLE dbcdb.optional_buttons (
 CREATE TABLE dbcdb.styles (
 	id int NOT NULL,
 	style_name varchar NOT NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
 	CONSTRAINT styles_pk PRIMARY KEY (id)
 );
 
@@ -55,6 +75,10 @@ CREATE TABLE dbcdb.styles (
 CREATE TABLE dbcdb.tipo_links (
 	id int NOT NULL,
 	descricao varchar NOT NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
 	CONSTRAINT tipo_links_pk PRIMARY KEY (id)
 );
 
@@ -63,6 +87,10 @@ CREATE TABLE dbcdb.link_styles (
 	id int NULL,
 	id_link int NULL,
 	id_style int NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
 	CONSTRAINT link_styles_pk PRIMARY KEY (id)
 );
 
@@ -71,6 +99,10 @@ CREATE TABLE dbcdb.action_button_styles (
 	id int NOT NULL,
 	id_action_button int NOT NULL,
 	id_style int NOT NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
 	CONSTRAINT action_button_styles_pk PRIMARY KEY (id)
 );
 
@@ -78,5 +110,9 @@ CREATE TABLE dbcdb.action_button_styles (
 CREATE TABLE dbcdb."users" (
 	id int NOT NULL,
 	username varchar NOT NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
 	CONSTRAINT user_pk PRIMARY KEY (id)
 );

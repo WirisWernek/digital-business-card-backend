@@ -14,5 +14,5 @@ public class BaseDTO {
 	private Long idOrganizacao;
 	private LocalDateTime dataCriacao;
 	private LocalDateTime dataExclusao;
-	private LocalDateTime dataAtualizacao;
+	private LocalDateTime dataModificacao;
 }

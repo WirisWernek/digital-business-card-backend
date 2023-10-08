@@ -1,5 +1,6 @@
 package com.github.wiriswernek.digitalbusinesscard.model.entity;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -11,8 +12,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.github.wiriswernek.digitalbusinesscard.model.entity.base.BaseEntity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +24,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Table(name = "LINKS")
-public class LinkEntity extends BaseEntity {
+public class LinkEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
@@ -36,13 +37,28 @@ public class LinkEntity extends BaseEntity {
 	private String texto;
 
 	@ManyToOne
-	@JoinColumn(name = "ID_TIPO", nullable=false)
+	@JoinColumn(name = "ID_TIPO", nullable = false)
 	private TipoLinkEntity tipo;
 
 	@OneToMany(mappedBy = "link")
 	private List<LinkStyleEntity> linkStyles;
 
 	@ManyToOne
-	@JoinColumn(name = "ID_USUARIO", nullable=false)
+	@JoinColumn(name = "ID_USUARIO", nullable = false)
 	private UserEntity usuario;
+
+	@Column(name = "ID_ORGANIZACAO")
+	@NotNull(message = "IdOrganização não pode ser nulo!")
+	@NotBlank(message = "IdOrganização não pode ser vazio!")
+	protected Long idOrganizacao;
+
+	@Column(name = "DATA_CRIACAO")
+	@NotNull(message = "Data de Criação não pode ser nula!")
+	protected LocalDateTime dataCriacao;
+
+	@Column(name = "DATA_EXCLUSAO")
+	protected LocalDateTime dataExclusao;
+
+	@Column(name = "DATA_MODIFICACAO")
+	protected LocalDateTime dataModificacao;
 }
