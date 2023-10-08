@@ -22,15 +22,18 @@ spring:
     schemas: dbcdb
     user: postgres
     password: wiris.123
-  management:
-    endpoints:
-      web:
-      exposure:
-        include: '*'
+
   logging:
     file:
       name: ./logs/log-file.log
-      
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+
 server:
   servlet: 
     context-path: /digital-business-card/api

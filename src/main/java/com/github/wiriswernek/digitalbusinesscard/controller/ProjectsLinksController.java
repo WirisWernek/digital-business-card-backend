@@ -149,7 +149,7 @@ public class ProjectsLinksController extends BaseClassController implements Base
 	}
 
 	@Override
-	@PatchMapping("/desactive/all")
+	@PatchMapping("/desactive/{id}")
 	public ResponseEntity desactive(@PathVariable Long id) {
 		try {
 			return ResponseEntity.ok().body(facade.desactive(id));

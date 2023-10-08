@@ -149,7 +149,7 @@ public class OptionalButtonsController extends BaseClassController implements Ba
 	}
 
 	@Override
-	@PatchMapping("/desactive/all")
+	@PatchMapping("/desactive/{id}")
 	public ResponseEntity desactive(@PathVariable Long id) {
 		try {
 			return ResponseEntity.ok().body(facade.desactive(id));
