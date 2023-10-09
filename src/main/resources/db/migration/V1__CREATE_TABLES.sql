@@ -116,3 +116,15 @@ CREATE TABLE dbcdb."users" (
 	data_modificacao timestamp NULL,
 	CONSTRAINT user_pk PRIMARY KEY (id)
 );
+
+-- TABELA DE OPTIONAL_BUTTON_STYLES
+CREATE TABLE dbcdb.optional_button_styles (
+	id int NOT NULL,
+	id_optional_button int NOT NULL,
+	id_style int NOT NULL,
+	id_organizacao int NOT NULL,
+	data_criacao timestamp NOT NULL,
+	data_exclusao timestamp NULL,
+	data_modificacao timestamp NULL,
+	CONSTRAINT optional_button_styles_pk PRIMARY KEY (id)
+);

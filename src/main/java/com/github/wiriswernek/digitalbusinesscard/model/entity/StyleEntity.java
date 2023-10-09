@@ -31,24 +31,27 @@ public class StyleEntity {
 	@Column(name = "STYLE_NAME")
 	private String styleName;
 
-	@OneToMany(mappedBy = "link")
+	@OneToMany(mappedBy = "style")
 	private List<LinkStyleEntity> linkStyles;
 
-	@OneToMany(mappedBy = "actionButton")
+	@OneToMany(mappedBy = "style")
 	private List<ActionButtonStyleEntity> actionButtonStyles;
+
+	@OneToMany(mappedBy = "style")
+	private List<OptionalButtonStyleEntity> optionalButtonStyles;
 
 	@Column(name = "ID_ORGANIZACAO")
 	@NotNull(message = "IdOrganização não pode ser nulo!")
 	@NotBlank(message = "IdOrganização não pode ser vazio!")
-	protected Long idOrganizacao;
+	private Long idOrganizacao;
 
 	@Column(name = "DATA_CRIACAO")
 	@NotNull(message = "Data de Criação não pode ser nula!")
-	protected LocalDateTime dataCriacao;
+	private LocalDateTime dataCriacao;
 
 	@Column(name = "DATA_EXCLUSAO")
-	protected LocalDateTime dataExclusao;
+	private LocalDateTime dataExclusao;
 
 	@Column(name = "DATA_MODIFICACAO")
-	protected LocalDateTime dataModificacao;
+	private LocalDateTime dataModificacao;
 }

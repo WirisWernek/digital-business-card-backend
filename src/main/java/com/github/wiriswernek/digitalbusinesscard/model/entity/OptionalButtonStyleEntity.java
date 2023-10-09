@@ -1,14 +1,14 @@
 package com.github.wiriswernek.digitalbusinesscard.model.entity;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -21,27 +21,20 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "USERS")
-public class UserEntity {
+@Table(name = "OPTIONAL_BUTTON_STYLES")
+public class OptionalButtonStyleEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
 
-	@Column(name = "USERNAME")
-	private String username;
+	@ManyToOne
+	@JoinColumn(name = "ID_OPTIONAL_BUTTON", nullable = false)
+	private OptionalButtonEntity optionalButton;
 
-	@OneToMany(mappedBy = "usuario")
-	private List<ActionButtonEntity> actionsButtons;
-
-	@OneToMany(mappedBy = "usuario")
-	private List<ContactLinkEntity> contactLinks;
-
-	@OneToMany(mappedBy = "usuario")
-	private List<LinkEntity> links;
-
-	@OneToMany(mappedBy = "usuario")
-	private List<OptionalButtonEntity> optionalButtons;
+	@ManyToOne
+	@JoinColumn(name = "ID_STYLE", nullable = false)
+	private StyleEntity style;
 
 	@Column(name = "ID_ORGANIZACAO")
 	@NotNull(message = "IdOrganização não pode ser nulo!")

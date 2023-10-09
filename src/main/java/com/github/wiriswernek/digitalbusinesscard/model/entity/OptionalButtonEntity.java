@@ -1,6 +1,7 @@
 package com.github.wiriswernek.digitalbusinesscard.model.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -9,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -52,18 +54,22 @@ public class OptionalButtonEntity {
 	@ManyToOne
 	@JoinColumn(name = "ID_USUARIO", nullable = false)
 	private UserEntity usuario;
+
+	@OneToMany(mappedBy = "optionalButton")
+	private List<OptionalButtonStyleEntity> optionalButtonStyles;
+
 	@Column(name = "ID_ORGANIZACAO")
 	@NotNull(message = "IdOrganização não pode ser nulo!")
 	@NotBlank(message = "IdOrganização não pode ser vazio!")
-	protected Long idOrganizacao;
+	private Long idOrganizacao;
 
 	@Column(name = "DATA_CRIACAO")
 	@NotNull(message = "Data de Criação não pode ser nula!")
-	protected LocalDateTime dataCriacao;
+	private LocalDateTime dataCriacao;
 
 	@Column(name = "DATA_EXCLUSAO")
-	protected LocalDateTime dataExclusao;
+	private LocalDateTime dataExclusao;
 
 	@Column(name = "DATA_ATUALIZACAO")
-	protected LocalDateTime dataModificacao;
+	private LocalDateTime dataModificacao;
 }

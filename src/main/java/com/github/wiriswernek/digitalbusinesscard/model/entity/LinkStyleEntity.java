@@ -39,15 +39,15 @@ public class LinkStyleEntity {
 	@Column(name = "ID_ORGANIZACAO")
 	@NotNull(message = "IdOrganização não pode ser nulo!")
 	@NotBlank(message = "IdOrganização não pode ser vazio!")
-	protected Long idOrganizacao;
+	private Long idOrganizacao;
 
 	@Column(name = "DATA_CRIACAO")
 	@NotNull(message = "Data de Criação não pode ser nula!")
-	protected LocalDateTime dataCriacao;
+	private LocalDateTime dataCriacao;
 
 	@Column(name = "DATA_EXCLUSAO")
-	protected LocalDateTime dataExclusao;
+	private LocalDateTime dataExclusao;
 
 	@Column(name = "DATA_MODIFICACAO")
-	protected LocalDateTime dataModificacao;
+	private LocalDateTime dataModificacao;
 }

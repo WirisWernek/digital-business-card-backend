@@ -24,3 +24,9 @@ ALTER TABLE dbcdb.optional_buttons ADD CONSTRAINT user_fk FOREIGN KEY (id_usuari
 
 -- CHAVE ESTRANGEIRA DE USER NA TABELA LINKS
 ALTER TABLE dbcdb.links ADD CONSTRAINT user_fk FOREIGN KEY (id_usuario) REFERENCES dbcdb."users"(id);
+
+-- CHAVE ESTRANGEIRA DE OPTIONAL_BUTTON NA TABELA OPTIONAL_BUTTON_STYLES
+ALTER TABLE dbcdb.optional_button_styles ADD CONSTRAINT optional_button_fk FOREIGN KEY (id_optional_button) REFERENCES dbcdb.optional_buttons(id);
+
+-- CHAVE ESTRANGEIRA DE STYLE NA TABELA OPTIONAL_BUTTON_STYLES
+ALTER TABLE dbcdb.optional_button_styles ADD CONSTRAINT style_fk FOREIGN KEY (id_style) REFERENCES dbcdb.styles(id);
