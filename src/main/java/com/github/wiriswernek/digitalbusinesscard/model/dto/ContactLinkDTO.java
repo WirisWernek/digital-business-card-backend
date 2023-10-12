@@ -1,8 +1,7 @@
 package com.github.wiriswernek.digitalbusinesscard.model.dto;
 
-import java.time.LocalDateTime;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.github.wiriswernek.digitalbusinesscard.model.dto.base.BaseDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class ContactLinkDTO {
+public class ContactLinkDTO extends BaseDTO {
 
 	private Long id;
 	private String whatsapp;
@@ -21,9 +20,4 @@ public class ContactLinkDTO {
 
 	@JsonIgnoreProperties(value = { "contactLinks" }, allowSetters = true)
 	private UserDTO usuario;
-
-	private Long idOrganizacao;
-	private LocalDateTime dataCriacao;
-	private LocalDateTime dataExclusao;
-	private LocalDateTime dataModificacao;
 }

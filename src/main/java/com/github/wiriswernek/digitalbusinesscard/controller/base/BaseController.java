@@ -9,7 +9,7 @@ import com.github.wiriswernek.digitalbusinesscard.exceptions.BusinessException;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public abstract class BaseClassController {
+public abstract class BaseController {
 
 	private UUID uuid;
 	private String message;

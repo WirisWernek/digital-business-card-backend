@@ -13,36 +13,22 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.wiriswernek.digitalbusinesscard.controller.base.BaseClassController;
-import com.github.wiriswernek.digitalbusinesscard.controller.base.BaseInterfaceController;
+import com.github.wiriswernek.digitalbusinesscard.controller.base.BaseController;
 import com.github.wiriswernek.digitalbusinesscard.domain.facade.interfaces.ProjectsLinksFacade;
 import com.github.wiriswernek.digitalbusinesscard.exceptions.BusinessException;
-import com.github.wiriswernek.digitalbusinesscard.model.dto.base.BaseDTO;
+import com.github.wiriswernek.digitalbusinesscard.model.dto.LinkDTO;
 
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequestMapping("projects-links")
 @RequiredArgsConstructor
-public class ProjectsLinksController extends BaseClassController implements BaseInterfaceController {
-	
+public class ProjectsLinksController extends BaseController {
+
 	private ProjectsLinksFacade facade;
 
-	@Override
-	@GetMapping("/")
-	public ResponseEntity getAll() {
-		try {
-			return ResponseEntity.ok().body(facade.getAll());
-		} catch (BusinessException be) {
-			return badRequestResponse(be);
-		} catch (Exception e) {
-			return internalServerError(e);
-		}
-	}
-
-	@Override
 	@GetMapping("/{id}")
-	public ResponseEntity getById(@PathVariable Long id) {
+	public ResponseEntity<LinkDTO> getById(@PathVariable Long id) {
 		try {
 			return ResponseEntity.ok().body(facade.getById(id));
 		} catch (BusinessException be) {
@@ -52,9 +38,19 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
+	@GetMapping("/")
+	public ResponseEntity<List<LinkDTO>> getAll() {
+		try {
+			return ResponseEntity.ok().body(facade.getAll());
+		} catch (BusinessException be) {
+			return badRequestResponse(be);
+		} catch (Exception e) {
+			return internalServerError(e);
+		}
+	}
+
 	@PostMapping("/")
-	public ResponseEntity insert(@RequestBody BaseDTO dto) {
+	public ResponseEntity<LinkDTO> insert(@RequestBody LinkDTO dto) {
 		try {
 			return ResponseEntity.ok().body(facade.insert(dto));
 		} catch (BusinessException be) {
@@ -64,9 +60,8 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
 	@PostMapping("/all")
-	public ResponseEntity insertAllObjects(@RequestBody List<BaseDTO> list) {
+	public ResponseEntity<List<LinkDTO>> insertAllObjects(@RequestBody List<LinkDTO> list) {
 		try {
 			return ResponseEntity.ok().body(facade.insertAllObjects(list));
 		} catch (BusinessException be) {
@@ -76,9 +71,8 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
 	@PutMapping("/{id}")
-	public ResponseEntity update(@RequestBody BaseDTO dto) {
+	public ResponseEntity<LinkDTO> update(@RequestBody LinkDTO dto) {
 		try {
 			return ResponseEntity.ok().body(facade.update(dto));
 		} catch (BusinessException be) {
@@ -88,9 +82,8 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
 	@PutMapping("/all")
-	public ResponseEntity updateAllObjects(@RequestBody List<BaseDTO> list) {
+	public ResponseEntity<List<LinkDTO>> updateAllObjects(@RequestBody List<LinkDTO> list) {
 		try {
 			return ResponseEntity.ok().body(facade.updateAllObjects(list));
 		} catch (BusinessException be) {
@@ -100,9 +93,8 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
 	@DeleteMapping("/{id}")
-	public ResponseEntity delete(@PathVariable Long id) {
+	public ResponseEntity<LinkDTO> delete(@PathVariable Long id) {
 		try {
 			return ResponseEntity.ok().body(facade.delete(id));
 		} catch (BusinessException be) {
@@ -112,9 +104,8 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
 	@DeleteMapping("/all")
-	public ResponseEntity deleteAll(@RequestBody List<Long> ids) {
+	public ResponseEntity<List<LinkDTO>> deleteAll(@RequestBody List<Long> ids) {
 		try {
 			return ResponseEntity.ok().body(facade.deleteAll(ids));
 		} catch (BusinessException be) {
@@ -124,9 +115,8 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
 	@PatchMapping("/active/{id}")
-	public ResponseEntity active(@PathVariable Long id) {
+	public ResponseEntity<LinkDTO> active(@PathVariable Long id) {
 		try {
 			return ResponseEntity.ok().body(facade.active(id));
 		} catch (BusinessException be) {
@@ -136,9 +126,8 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
 	@PatchMapping("/active/all")
-	public ResponseEntity activeAllByIds(@RequestBody List<Long> ids) {
+	public ResponseEntity<List<LinkDTO>> activeAllByIds(@RequestBody List<Long> ids) {
 		try {
 			return ResponseEntity.ok().body(facade.activeAllByIds(ids));
 		} catch (BusinessException be) {
@@ -148,9 +137,8 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
 	@PatchMapping("/desactive/{id}")
-	public ResponseEntity desactive(@PathVariable Long id) {
+	public ResponseEntity<LinkDTO> desactive(@PathVariable Long id) {
 		try {
 			return ResponseEntity.ok().body(facade.desactive(id));
 		} catch (BusinessException be) {
@@ -160,9 +148,8 @@ public class ProjectsLinksController extends BaseClassController implements Base
 		}
 	}
 
-	@Override
 	@PatchMapping("/desactive/all")
-	public ResponseEntity desactiveAllByIds(@RequestBody List<Long> ids) {
+	public ResponseEntity<List<LinkDTO>> desactiveAllByIds(@RequestBody List<Long> ids) {
 		try {
 			return ResponseEntity.ok().body(facade.desactiveAllByIds(ids));
 		} catch (BusinessException be) {

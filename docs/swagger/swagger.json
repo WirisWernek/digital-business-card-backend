@@ -1,0 +1,2255 @@
+{
+	"openapi": "3.0.1",
+	"info": {
+		"title": "OpenAPI definition",
+		"version": "v0"
+	},
+	"servers": [
+		{
+			"url": "http://localhost:8080/digital-business-card/api",
+			"description": "Generated server url"
+		}
+	],
+	"paths": {
+		"/social-links/{id}": {
+			"get": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "getById",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "update",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LinkDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "delete",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/social-links/all": {
+			"put": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "updateAllObjects",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "insertAllObjects",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "deleteAll",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/projects-links/{id}": {
+			"get": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "getById_1",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "update_1",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LinkDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "delete_1",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/projects-links/all": {
+			"put": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "updateAllObjects_1",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "insertAllObjects_1",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "deleteAll_1",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/optional-buttons/{id}": {
+			"get": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "getById_2",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/OptionalButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "update_2",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/OptionalButtonDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/OptionalButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "delete_2",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/OptionalButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/optional-buttons/all": {
+			"put": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "updateAllObjects_2",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/OptionalButtonDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/OptionalButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "insertAllObjects_2",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/OptionalButtonDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/OptionalButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "deleteAll_2",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/OptionalButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/contact-links/{id}": {
+			"get": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "getById_3",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ContactLinkDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "update_3",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ContactLinkDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ContactLinkDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "delete_3",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ContactLinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/contact-links/all": {
+			"put": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "updateAllObjects_3",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/ContactLinkDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ContactLinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "insertAllObjects_3",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/ContactLinkDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ContactLinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "deleteAll_3",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ContactLinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/actions-buttons/{id}": {
+			"get": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "getById_4",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ActionButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"put": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "update_4",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ActionButtonDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ActionButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "delete_4",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ActionButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/actions-buttons/all": {
+			"put": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "updateAllObjects_4",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/ActionButtonDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ActionButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "insertAllObjects_4",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"$ref": "#/components/schemas/ActionButtonDTO"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ActionButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"delete": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "deleteAll_4",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ActionButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/social-links/": {
+			"get": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "getAll",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "insert",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LinkDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/projects-links/": {
+			"get": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "getAll_1",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "insert_1",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/LinkDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/optional-buttons/": {
+			"get": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "getAll_2",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/OptionalButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "insert_2",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/OptionalButtonDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/OptionalButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/contact-links/": {
+			"get": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "getAll_3",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ContactLinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "insert_3",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ContactLinkDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ContactLinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/actions-buttons/": {
+			"get": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "getAll_4",
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ActionButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"post": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "insert_4",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ActionButtonDTO"
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ActionButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/social-links/desactive/{id}": {
+			"patch": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "desactive",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/social-links/desactive/all": {
+			"patch": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "desactiveAllByIds",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/social-links/active/{id}": {
+			"patch": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "active",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/social-links/active/all": {
+			"patch": {
+				"tags": [
+					"social-links-controller"
+				],
+				"operationId": "activeAllByIds",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/projects-links/desactive/{id}": {
+			"patch": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "desactive_1",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/projects-links/desactive/all": {
+			"patch": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "desactiveAllByIds_1",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/projects-links/active/{id}": {
+			"patch": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "active_1",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/LinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/projects-links/active/all": {
+			"patch": {
+				"tags": [
+					"projects-links-controller"
+				],
+				"operationId": "activeAllByIds_1",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/LinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/optional-buttons/desactive/{id}": {
+			"patch": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "desactive_2",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/OptionalButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/optional-buttons/desactive/all": {
+			"patch": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "desactiveAllByIds_2",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/OptionalButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/optional-buttons/active/{id}": {
+			"patch": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "active_2",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/OptionalButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/optional-buttons/active/all": {
+			"patch": {
+				"tags": [
+					"optional-buttons-controller"
+				],
+				"operationId": "activeAllByIds_2",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/OptionalButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/contact-links/desactive/{id}": {
+			"patch": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "desactive_3",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ContactLinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/contact-links/desactive/all": {
+			"patch": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "desactiveAllByIds_3",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ContactLinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/contact-links/active/{id}": {
+			"patch": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "active_3",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ContactLinkDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/contact-links/active/all": {
+			"patch": {
+				"tags": [
+					"contact-links-controller"
+				],
+				"operationId": "activeAllByIds_3",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ContactLinkDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/actions-buttons/desactive/{id}": {
+			"patch": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "desactive_4",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ActionButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/actions-buttons/desactive/all": {
+			"patch": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "desactiveAllByIds_4",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ActionButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/actions-buttons/active/{id}": {
+			"patch": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "active_4",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"schema": {
+							"type": "integer",
+							"format": "int64"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"$ref": "#/components/schemas/ActionButtonDTO"
+								}
+							}
+						}
+					}
+				}
+			}
+		},
+		"/actions-buttons/active/all": {
+			"patch": {
+				"tags": [
+					"actions-buttons-controller"
+				],
+				"operationId": "activeAllByIds_4",
+				"requestBody": {
+					"content": {
+						"application/json": {
+							"schema": {
+								"type": "array",
+								"items": {
+									"type": "integer",
+									"format": "int64"
+								}
+							}
+						}
+					},
+					"required": true
+				},
+				"responses": {
+					"200": {
+						"description": "OK",
+						"content": {
+							"*/*": {
+								"schema": {
+									"type": "array",
+									"items": {
+										"$ref": "#/components/schemas/ActionButtonDTO"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"components": {
+		"schemas": {
+			"LinkDTO": {
+				"type": "object",
+				"properties": {
+					"idOrganizacao": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"dataCriacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataExclusao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataModificacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"link": {
+						"type": "string"
+					},
+					"texto": {
+						"type": "string"
+					},
+					"tipo": {
+						"$ref": "#/components/schemas/TipoLinkDTO"
+					},
+					"linkStyles": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/LinkStyleDTO"
+						}
+					},
+					"usuario": {
+						"$ref": "#/components/schemas/UserDTO"
+					}
+				}
+			},
+			"LinkStyleDTO": {
+				"type": "object",
+				"properties": {
+					"idOrganizacao": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"dataCriacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataExclusao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataModificacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"style": {
+						"$ref": "#/components/schemas/StyleDTO"
+					}
+				}
+			},
+			"StyleDTO": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"styleName": {
+						"type": "string"
+					}
+				}
+			},
+			"TipoLinkDTO": {
+				"type": "object",
+				"properties": {
+					"idOrganizacao": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"dataCriacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataExclusao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataModificacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"descricao": {
+						"type": "string"
+					}
+				}
+			},
+			"UserDTO": {
+				"type": "object",
+				"properties": {
+					"idOrganizacao": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"dataCriacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataExclusao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataModificacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"username": {
+						"type": "string"
+					}
+				}
+			},
+			"OptionalButtonDTO": {
+				"type": "object",
+				"properties": {
+					"idOrganizacao": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"dataCriacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataExclusao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataModificacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"pixEnable": {
+						"type": "boolean"
+					},
+					"avaliacaoEnable": {
+						"type": "boolean"
+					},
+					"newsletterEnable": {
+						"type": "boolean"
+					},
+					"anotacaoEnable": {
+						"type": "boolean"
+					},
+					"emailRapidoEnable": {
+						"type": "boolean"
+					},
+					"chavePix": {
+						"type": "string"
+					},
+					"emailRapidoEndereco": {
+						"type": "string"
+					},
+					"usuario": {
+						"$ref": "#/components/schemas/UserDTO"
+					},
+					"optionalButtonStyles": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/OptionalButtonStyleDTO"
+						}
+					}
+				}
+			},
+			"OptionalButtonStyleDTO": {
+				"type": "object",
+				"properties": {
+					"idOrganizacao": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"dataCriacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataExclusao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataModificacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"style": {
+						"$ref": "#/components/schemas/StyleDTO"
+					}
+				}
+			},
+			"ContactLinkDTO": {
+				"type": "object",
+				"properties": {
+					"idOrganizacao": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"dataCriacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataExclusao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataModificacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"whatsapp": {
+						"type": "string"
+					},
+					"email": {
+						"type": "string"
+					},
+					"telefone": {
+						"type": "string"
+					},
+					"download": {
+						"type": "string"
+					},
+					"usuario": {
+						"$ref": "#/components/schemas/UserDTO"
+					}
+				}
+			},
+			"ActionButtonDTO": {
+				"type": "object",
+				"properties": {
+					"idOrganizacao": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"dataCriacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataExclusao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataModificacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"link": {
+						"type": "string"
+					},
+					"icon": {
+						"type": "string"
+					},
+					"descricao": {
+						"type": "string"
+					},
+					"styleNameId": {
+						"type": "string"
+					},
+					"actionButtonStyles": {
+						"type": "array",
+						"items": {
+							"$ref": "#/components/schemas/ActionButtonStyleDTO"
+						}
+					},
+					"usuario": {
+						"$ref": "#/components/schemas/UserDTO"
+					}
+				}
+			},
+			"ActionButtonStyleDTO": {
+				"type": "object",
+				"properties": {
+					"idOrganizacao": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"dataCriacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataExclusao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"dataModificacao": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"id": {
+						"type": "integer",
+						"format": "int64"
+					},
+					"style": {
+						"$ref": "#/components/schemas/StyleDTO"
+					}
+				}
+			}
+		}
+	}
+}
