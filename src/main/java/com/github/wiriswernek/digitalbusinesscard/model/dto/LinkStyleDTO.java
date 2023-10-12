@@ -1,8 +1,8 @@
 package com.github.wiriswernek.digitalbusinesscard.model.dto;
 
-import java.time.LocalDateTime;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.github.wiriswernek.digitalbusinesscard.model.dto.base.BaseDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,18 +11,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class LinkStyleDTO {
+public class LinkStyleDTO extends BaseDTO {
 
 	private Long id;
 
-	@JsonIgnoreProperties( value = { "linkStyles" }, allowSetters = true )
+	@JsonIgnore
 	private LinkDTO link;
 
-	@JsonIgnoreProperties( value = { "linkStyles" }, allowSetters = true )
+	@JsonIgnoreProperties(value = { "linkStyles" }, allowSetters = true)
 	private StyleDTO style;
-
-	private Long idOrganizacao;
-	private LocalDateTime dataCriacao;
-	private LocalDateTime dataExclusao;
-	private LocalDateTime dataModificacao;
 }

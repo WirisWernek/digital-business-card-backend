@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class BaseDTO {
 
-	private Long idOrganizacao;
-	private LocalDateTime dataCriacao;
-	private LocalDateTime dataExclusao;
-	private LocalDateTime dataModificacao;
+	protected Long idOrganizacao;
+	protected LocalDateTime dataCriacao;
+	protected LocalDateTime dataExclusao;
+	protected LocalDateTime dataModificacao;
 }
