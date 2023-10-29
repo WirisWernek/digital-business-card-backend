@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: digital-business-card
+  datasource:
+    url: jdbc:postgresql://postgres:5432/dbcdb
+    username: postgres
+    password: wiris.123
+  flyway:
+    user: postgres
+    password: wiris.123
